@@ -1,96 +1,60 @@
 import 'package:flutter/material.dart';
-import 'screen1.dart';
+import 'AuthScreen file/TeacherScreen.dart';
+import 'Student/Auth1.dart';
 
-class AuthScreen  extends StatelessWidget {
+class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginPage(),
-      routes: {
-        '/login': (context) => LoginPage(),
-        '/register': (context) => RegisterPage(),
-      },
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     );
   }
 }
 
-
-
-class RegisterPage extends StatelessWidget {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Register Page'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      backgroundColor: Colors.blue,
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-              keyboardType: TextInputType.emailAddress,
+            Text(
+              'Are You?',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            SizedBox(height: 16.0),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                // Add user registration logic here
-                // For simplicity, just navigate back to the login page
-                Navigator.pushNamed(context, '/register');
-              },
-              child: Text('Register'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-class LoginPage extends StatelessWidget {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Login Page'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-              keyboardType: TextInputType.emailAddress,
-            ),
-            SizedBox(height: 16.0),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                // Add authentication logic here
-                // For simplicity, just navigate to the register page
-                Navigator.pushNamed(context, '/register');
-              },
-              child: Text('Login'),
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ClickableIconWithLabel(
+                  icon: Icons.person,
+                  label: 'Teacher',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TeacherScreen()),
+                    );
+                  },
+                ),
+                SizedBox(width: 24),
+                ClickableIconWithLabel(
+                  icon: Icons.school_outlined,
+                  label: 'Student',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StudentScreen()),
+                    );
+                  },
+                ),
+              ],
             ),
           ],
         ),
@@ -99,3 +63,39 @@ class LoginPage extends StatelessWidget {
   }
 }
 
+class ClickableIconWithLabel extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onPressed;
+
+  ClickableIconWithLabel({
+    required this.icon,
+    required this.label,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        InkWell(
+          onTap: onPressed,
+          child: Icon(
+            icon,
+            size: 72,
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(height: 12),
+        Text(
+          label,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+}

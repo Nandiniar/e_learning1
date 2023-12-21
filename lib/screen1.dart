@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'introscreen.dart';
 import 'AuthScreen.dart';
@@ -17,7 +16,6 @@ class ElearningApp extends StatelessWidget {
         '/firstScreen': (context) => SplashScreen(),
 
         '/auth': (context) => AuthScreen(),
-        '/home': (context) => HomeScreen(),
         '/assignment': (context) => AssignmentScreen(),
 
       },

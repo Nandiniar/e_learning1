@@ -9,14 +9,14 @@ class IntroScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           const Icon(
+            const Icon(
               Icons.school,
               size: 100,
               color: Colors.white,
             ),
             const SizedBox(height: 20),
-           const Text(
-              'E-Learning App',
+            const Text(
+              'Education on move',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -28,7 +28,7 @@ class IntroScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/firstScreen');
               },
-             child: Text('Get Started'),
+              child: Text('Get Started'),
             ),
           ],
         ),
