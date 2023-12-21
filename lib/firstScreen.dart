@@ -8,56 +8,53 @@ class SplashScreen extends StatefulWidget {
     return SplashState();
   }
 }
-  class SplashState extends State<SplashScreen> {
+class SplashState extends State<SplashScreen> {
   @override
   void initState() {
-  // TODO: implement initState
-  super.initState();
-  startTime();
+    // TODO: implement initState
+    super.initState();
+    startTime();
   }
 
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
-  body: initScreen(context),
-  );
+    return Scaffold(
+      body: initScreen(context),
+    );
   }
 
   startTime() async {
-  var duration = new Duration(seconds: 6);
-  return new Timer(duration, route);
+    var duration = new Duration(seconds: 6);
+    return new Timer(duration, route);
   }
   route() {
-  Navigator.pushReplacement(context, MaterialPageRoute(
-  builder: (context) => AuthScreen(),
-  )
-  );
+    Navigator.pushReplacement(context, MaterialPageRoute(
+      builder: (context) => AuthScreen(),
+    )
+    );
   }
 
   initScreen(BuildContext context) {
-  return Container(
-  decoration :const  BoxDecoration(
-  image : DecorationImage(
-  image : AssetImage( 'images/children.jpg') ,fit :BoxFit.cover// here Box fit is used so that it covers the whole page
-  )
-  ),
-  child:const Center(
-  child: Padding(
-  padding: EdgeInsets.all(16.0),
-  child: Text(
-  'Nomadic Education: Bridging the Gap, Empowering the Future',
-  textAlign: TextAlign.center,
-  style: TextStyle(
+    return Container(
 
-  color: Colors.blue,
-  fontSize: 40.0,
-  fontWeight: FontWeight.bold,
+      child:const Center(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Text(
+            'Nomadic Education: Bridging the Gap, Empowering the Future',
+            textAlign: TextAlign.center,
+            style: TextStyle(
 
-  decoration: TextDecoration.none,
-  ),
-  ),
-  ),
-  ),
-  );
+              color: Colors.blue,
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+
+              decoration: TextDecoration.none,
+            ),
+          ),
+        ),
+      ),
+    );
   }
-  }
+}
+
