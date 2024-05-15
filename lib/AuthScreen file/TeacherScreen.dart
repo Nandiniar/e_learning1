@@ -70,7 +70,7 @@ class TeacherScreen extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: buttonColor,
+                      backgroundColor: buttonColor,
                     ),
                     child: Text(
                       'Register',
@@ -86,7 +86,7 @@ class TeacherScreen extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: buttonColor,
+                      backgroundColor: buttonColor,
                     ),
                     child: Text(
                       'Log In',

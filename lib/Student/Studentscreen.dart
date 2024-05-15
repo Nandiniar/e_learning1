@@ -12,7 +12,12 @@ import 'Attendance.dart';
 
 import 'Cultural.dart';
 
+
 class Student1 extends StatelessWidget {
+
+
+  Student1();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +26,8 @@ class Student1 extends StatelessWidget {
         title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Student', style: TextStyle(fontSize: 18)),
-            Text('Activities', style: TextStyle(fontSize: 16)),
+            //Text(studentName, style: TextStyle(fontSize: 18)),
+            //Text(studentClass, style: TextStyle(fontSize: 16)),
           ],
         ),
       ),
@@ -183,13 +188,13 @@ class Student1 extends StatelessWidget {
       );
 
     }
-   /* else if(itemName=='Attendance'){
+    else if(itemName=='Attendance'){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Attendance()),
       );
 
-    }*/
+    }
     else if(itemName=='Games'){
       Navigator.push(
         context,

@@ -14,7 +14,6 @@ class Ask extends StatefulWidget {
 
 class _AskState extends State<Ask> {
   final List<ChatMessage> messages = [];
-
   TextEditingController _textController = TextEditingController();
 
   @override
@@ -88,11 +87,15 @@ class _AskState extends State<Ask> {
           IconButton(
             icon: Icon(Icons.send),
             onPressed: () {
-              _sendMessage(_textController.text, true);
+              String question = _textController.text;
+              _sendMessage(question, true);
+
               // Simulate response after a short delay
               Future.delayed(Duration(seconds: 1), () {
-                _sendMessage('Science is the systematic enterprise that builds and organizes knowledge in the form of testable explanations and predictions about the universe.', false);
+                String answer = getAnswer(question);
+                _sendMessage(answer, false);
               });
+
               _textController.clear();
             },
           ),
@@ -105,6 +108,21 @@ class _AskState extends State<Ask> {
     setState(() {
       messages.insert(0, ChatMessage(text: text, isUser: isUser));
     });
+  }
+
+  String getAnswer(String question) {
+    // Implement your logic to map questions to answers here
+    // You can use if-else statements, switch-case, or any other method
+    // For demonstration, a simple example is shown below
+    if (question.toLowerCase().contains('science')) {
+      return 'Science is the systematic enterprise that builds and organizes knowledge in the form of testable explanations and predictions about the universe.';
+    } else if (question.toLowerCase().contains('artificial intelligence')) {
+      return 'Artificial intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think and learn.';
+    } else if (question.toLowerCase().contains('your_custom_question')) {
+      return 'Your custom answer';
+    } else {
+      return 'I don\'t have an answer for that question.';
+    }
   }
 }
 

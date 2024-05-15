@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+          const  Text(
               'Are You?',
               style: TextStyle(
                 color: Colors.white,
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 16),
+          const  SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => StudentScreen()),
+                      MaterialPageRoute(builder: (context) => L1()),
                     );
                   },
                 ),
@@ -86,10 +86,10 @@ class ClickableIconWithLabel extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        SizedBox(height: 12),
+      const  SizedBox(height: 12),
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,

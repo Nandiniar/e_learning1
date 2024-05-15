@@ -71,16 +71,16 @@ class _RegistrationFormState extends State<RegistrationForm> {
               fillColor: Colors.white,
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           TextFormField(
             obscureText: true,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Re-enter Password',
               filled: true,
               fillColor: Colors.white,
             ),
           ),
-          SizedBox(height: 24),
+        const  SizedBox(height: 24),
           ElevatedButton(
             onPressed: () {
               Navigator.push(
@@ -89,7 +89,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
               );
             },
             style: ElevatedButton.styleFrom(
-              primary: Colors.lightBlueAccent,
+              backgroundColor: Colors.lightBlueAccent,
             ),
             child: Text('Register'),
           ),

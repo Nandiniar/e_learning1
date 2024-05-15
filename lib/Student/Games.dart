@@ -157,7 +157,7 @@ class _GamesState extends State<Games> {
                         checkAnswer(options[index]);
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
+                        backgroundColor: Colors.green,
                         padding: EdgeInsets.all(20.0),
                       ),
                       child: Text(
