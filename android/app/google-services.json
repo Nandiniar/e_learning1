@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "648934170892",
+    "firebase_url": "https://education-on-move-nandini-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "education-on-move-nandini",
+    "storage_bucket": "education-on-move-nandini.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648934170892:android:edfcbd8bb01bc5dd422929",
+        "android_client_info": {
+          "package_name": "com.example.e_learning1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAButmOgfQI2A0Fw9bEaiRUZQi-S1q3LMA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
